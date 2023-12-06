@@ -1,5 +1,4 @@
 import { Header } from "../components/Header"
-import { Links } from "../components/Links"
 
 export default function Home() {
     return (

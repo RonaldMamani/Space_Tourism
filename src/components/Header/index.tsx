@@ -1,42 +1,11 @@
 import { useState } from 'react'
 import { Links } from "../Links"
 import Logo from '../../assets/shared/logo.svg'
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 export const Header = () => {
 
-    const [home, setHome] = useState(true)
-    const [destination, setDestination] = useState(false)
-    const [crew, setCrew] = useState(false)
-    const [technology, setTechnology] = useState(false)
-
-    const handleButtonHome = () => {
-        setHome(true)
-        setDestination(false)
-        setCrew(false)
-        setTechnology(false)
-    }
-
-    const handleButtonDestination = () => {
-        setHome(false)
-        setDestination(true)
-        setCrew(false)
-        setTechnology(false)
-    }
-
-    const handleButtonCrew = () => {
-        setHome(false)
-        setDestination(false)
-        setCrew(true)
-        setTechnology(false)
-    }
-
-    const handleButtonTech = () => {
-        setHome(false)
-        setDestination(false)
-        setCrew(false)
-        setTechnology(true)
-    }
+    const {pathname} = useLocation()
 
     return (
         <header className="pt-10 relative flex justify-between items-center">
@@ -47,23 +16,19 @@ export const Header = () => {
             <div className="flex gap-28 bg-gray-200/5 backdrop-blur-xl px-40">
                 <Links 
                     href="" number={0} content="HOME" 
-                    className={`${home ? 'border-b-4' : ''}`}
-                    onClick={handleButtonHome}
+                    className={`${pathname === "/" ? 'border-b-4' : ''}`}
                 />
                 <Links 
                     href="destination" number={1} content="DESTINATION" 
-                    className={`${destination ? 'border-b-4' : ''}`} 
-                    onClick={handleButtonDestination}
+                    className={`${pathname == "/destination" || "/destination/mars" || "/destination/europa" || "/destination/titan" ? 'border-b-4' : ''}`} 
                 />
                 <Links 
                     href="crew" number={2} content="CREW" 
-                    className={`${crew ? 'border-b-4' : ''}`} 
-                    onClick={handleButtonCrew}
+                    className={`${pathname === "/crew" ? 'border-b-4' : ''}`} 
                 />
                 <Links 
                     href="technology" number={3} content="TECHNOLOGY" 
-                    className={`${technology ? 'border-b-4' : ''}`} 
-                    onClick={handleButtonTech}
+                    className={`${pathname === "/technology" ? 'border-b-4' : ''}`} 
                 />
             </div>
         </header>
