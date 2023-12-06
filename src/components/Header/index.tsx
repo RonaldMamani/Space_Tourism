@@ -20,7 +20,7 @@ export const Header = () => {
                 />
                 <Links 
                     href="destination" number={1} content="DESTINATION" 
-                    className={`${pathname == "/destination" || "/destination/mars" || "/destination/europa" || "/destination/titan" ? 'border-b-4' : ''}`} 
+                    className={`${pathname === "/destination" || pathname === "/destination/mars" || pathname === "/destination/europa" || pathname === "/destination/titan" ? 'border-b-4' : ''}`} 
                 />
                 <Links 
                     href="crew" number={2} content="CREW" 
