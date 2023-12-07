@@ -10,9 +10,9 @@ type Props = {
 export const Links = ({number,content,href,className} : Props) => {
 
     return (
-        <Link to={`/${href}`} className={`${className} flex gap-3 text-xl py-10 text-white group`}>
+        <Link to={`/${href}`} className={`${className} flex gap-3 text-xl py-10 transition-colors hover:text-white`}>
             <span className="font-extrabold">0{number}</span>
-            <span className="font-extralight group-hover:font-semibold">{content}</span>
+            <span className="font-extralight">{content}</span>
         </Link>
     )
 }

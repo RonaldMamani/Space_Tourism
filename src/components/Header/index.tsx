@@ -12,23 +12,23 @@ export const Header = () => {
             <Link to="/" className="ml-20">
                 <img src={Logo} alt="Logo da Space Tourist" />
             </Link>
-            <div className="absolute w-[650px] left-44 border border-b-white/10 z-10"></div>
+            <div className="absolute w-[650px] left-44 border-b border-b-gray-500 z-10"></div>
             <div className="flex gap-28 bg-gray-200/5 backdrop-blur-xl px-40">
                 <Links 
                     href="" number={0} content="HOME" 
-                    className={`${pathname === "/" ? 'border-b-4' : ''}`}
+                    className={`${pathname === "/" ? 'border-b-4 text-white' : 'text-slate-300'}`}
                 />
                 <Links 
                     href="destination" number={1} content="DESTINATION" 
-                    className={`${pathname === "/destination" || pathname === "/destination/mars" || pathname === "/destination/europa" || pathname === "/destination/titan" ? 'border-b-4' : ''}`} 
+                    className={`${pathname === "/destination" || pathname === "/destination/mars" || pathname === "/destination/europa" || pathname === "/destination/titan" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
                 />
                 <Links 
                     href="crew" number={2} content="CREW" 
-                    className={`${pathname === "/crew" ? 'border-b-4' : ''}`} 
+                    className={`${pathname === "/crew" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
                 />
                 <Links 
                     href="technology" number={3} content="TECHNOLOGY" 
-                    className={`${pathname === "/technology" ? 'border-b-4' : ''}`} 
+                    className={`${pathname === "/technology" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
                 />
             </div>
         </header>

@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "../components/Header";
+import TitlePage from "../components/TitlePage";
 
 export default function Destination() {
     return (
@@ -9,10 +10,7 @@ export default function Destination() {
                 text-white
                 lg:px-40 lg:pt-24
                 ">
-                <h3 className="uppercase text-4xl font-thin mb-10">
-                    <span className="text-gray-700 font-bold mr-8">01</span>
-                    Pick your destination
-                </h3>
+                <TitlePage number={1} title="Pick Your Destination" />
                 <div>
                     <Outlet />
                 </div>

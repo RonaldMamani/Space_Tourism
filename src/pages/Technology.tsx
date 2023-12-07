@@ -2,7 +2,11 @@ import { useState } from "react"
 import { Header } from "../components/Header";
 import ButtonTech from "../components/ButtonTech";
 import SectionTech from "../components/SectionTech";
+
 import Launch from "../assets/technology/image-launch-vehicle-portrait.jpg"
+import SpacePort from "../assets/technology/image-spaceport-portrait.jpg"
+import SpaceCapsule from "../assets/technology/image-space-capsule-portrait.jpg"
+import TitlePage from "../components/TitlePage";
 
 export default function Technology() {
 
@@ -35,10 +39,7 @@ export default function Technology() {
                 text-white
                 lg:px-40 lg:pt-24
                 ">
-                <h3 className="uppercase text-4xl font-thin mb-5">
-                    <span className="text-gray-700 font-bold mr-8">03</span>
-                    Space Launch 101
-                </h3>
+                <TitlePage number={3} title="Space Launch 101" />
                 <div className="grid grid-cols-2 gap-10 items-center">
                     <div className="flex gap-16">
                         <nav className="flex flex-col justify-between gap-10">
@@ -58,19 +59,53 @@ export default function Technology() {
                                 onClick={handleButtonSectionSpaceCapsule}
                             />
                         </nav>
-                        a
-                        <SectionTech 
-                            title="LAUNCH VEHICLE" 
-                            descrition="A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from 
-                            Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in 
-                            operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!" 
-                        />
+                        {launch &&
+                            <SectionTech 
+                                title="LAUNCH VEHICLE" 
+                                descrition="A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from 
+                                Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in 
+                                operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!" 
+                            />
+                        }
+                        {spaceport &&
+                            <SectionTech 
+                                title="SPACEPORT" 
+                                descrition="A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to 
+                                the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is 
+                                ideally situated to take advantage of the Earth’s rotation for launch." 
+                            />
+                        }
+                        {spacecapsule &&
+                            <SectionTech 
+                                title="SPACE CAPSULE" 
+                                descrition="A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to 
+                                reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the 
+                                flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained." 
+                            />
+                        }
                     </div>
                     <div className="flex justify-end">
-                        <img 
-                            className=""
-                            src={Launch} 
-                            alt="Imagem de Partida de Foguete" />
+                        {launch &&
+                            <img 
+                                className=""
+                                src={Launch} 
+                                alt="Imagem de Partida de Foguete" 
+                            />
+                        }
+                        {spaceport &&
+                            <img 
+                                className=""
+                                src={SpacePort} 
+                                alt="Imagem de Preparação do Foguete" 
+                            />
+                        }
+                        {spacecapsule &&
+                            <img 
+                                className=""
+                                src={SpaceCapsule} 
+                                alt="Imagem de Foguete no Espaço" 
+                            />
+                        }
                     </div>
                 </div>
             </div>
