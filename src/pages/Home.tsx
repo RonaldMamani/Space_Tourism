@@ -3,12 +3,15 @@ import { Header } from "../components/Header"
 
 export default function Home() {
     return (
-        <div className="bg-[url('./assets/home/background-home-desktop.jpg')] bg-center bg-cover h-screen">
+        <div className="
+            bg-[url('./assets/home/background-home-mobile.jpg')] bg-center bg-cover h-screen
+            md:bg-[url('./assets/home/background-home-tablet.jpg')]
+            lg:bg-[url('./assets/home/background-home-desktop.jpg')]">
             <Header />
             <section className="
-                px-4 py-4
+                px-4 py-4 flex flex-col justify-around items-center
                 md:p-10
-                lg:px-52 lg:pt-48 lg:flex lg:justify-between lg:items-end
+                lg:px-52 lg:pt-48 lg:flex-row lg:justify-between lg:items-end
                 ">
                 <div className="flex flex-col gap-5 w-[470px] text-gray-300">
                     <h4 className="text-3xl">SO, YOU WANT TO TRAVEL TO</h4>
