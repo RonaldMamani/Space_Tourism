@@ -13,9 +13,9 @@ export const Header = () => {
 
     return (
         <header className="
-            px-4 py-4 relative
+            px-5 py-6 flex items-center justify-between
             lg:pt-10 [1023]: lg:flex lg:justify-between lg:items-center">
-            <Link to="/" className="ml-20">
+            <Link to="/" className="lg:ml-20">
                 <img src={Logo} alt="Logo da Space Tourist" />
             </Link>
             <div className="
@@ -26,34 +26,34 @@ export const Header = () => {
                 <div className="flex gap-28 bg-gray-200/5 backdrop-blur-xl px-40">
                     <Links 
                         href="" number={0} content="HOME" 
-                        className={`${pathname === "/" ? 'border-b-4 text-white' : 'text-slate-300'}`}
+                        className={`${pathname === "/" ? 'border-b-4 text-white' : 'text-slate-300 hover:border-b-slate-400 hover:border-b-4'}`}
                     />
                     <Links 
                         href="destination" number={1} content="DESTINATION" 
-                        className={`${pathname === "/destination" || pathname === "/destination/mars" || pathname === "/destination/europa" || pathname === "/destination/titan" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
+                        className={`${pathname === "/destination" || pathname === "/destination/mars" || pathname === "/destination/europa" || pathname === "/destination/titan" ? 'border-b-4 text-white' : 'text-slate-300 hover:border-b-slate-400 hover:border-b-4'}`} 
                     />
                     <Links 
                         href="crew" number={2} content="CREW" 
-                        className={`${pathname === "/crew" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
+                        className={`${pathname === "/crew" ? 'border-b-4 text-white' : 'text-slate-300 hover:border-b-slate-400 hover:border-b-4'}`} 
                     />
                     <Links 
                         href="technology" number={3} content="TECHNOLOGY" 
-                        className={`${pathname === "/technology" ? 'border-b-4 text-white' : 'text-slate-300'}`} 
+                        className={`${pathname === "/technology" ? 'border-b-4 text-white' : 'text-slate-300 hover:border-b-slate-400 hover:border-b-4'}`} 
                     />
                 </div>
             </div>
             <button 
-                className='lg:hidden absolute top-0 right-2'
+                className='lg:hidden top-0 right-2'
                 onClick={() => setOpen(!open)}
                 >
                 {!open ? (
-                    <img className='my-14' src={Hamburger} alt="" />
+                    <img className='' src={Hamburger} alt="" />
                 ) : (
-                    <div className='bg-gray-500/5 backdrop-blur-xl px-14 py-14 flex flex-col h-screen '>
-                        <div className='absolute right-0 '>
+                    <div className=' bg-gray-500/5 absolute top-0 right-0 backdrop-blur-xl px-16 py-10 flex flex-col h-screen '>
+                        <div className='absolute right-5 '>
                             <img src={Close} alt="" />
                         </div>
-                        <div className='flex flex-col text-white'>
+                        <div className='pt-20 flex flex-col text-white'>
                             <Links 
                             href="" number={0} content="HOME" 
                             />

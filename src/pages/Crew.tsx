@@ -55,7 +55,7 @@ export default function Crew() {
                 <div className="
                     lg:grid lg:grid-cols-2 lg:items-center lg:pt-20
                     ">
-                    <div className="flex flex-col gap-12">
+                    <div className="items-start flex flex-col gap-10 relative">
                         {commander &&
                             <PersonDescrition 
                                 carrer="Commander "  
@@ -91,7 +91,7 @@ export default function Crew() {
                                 Iranian in space. "
                             />
                         }
-                        <div className="flex gap-5 items-center">
+                        <div className="flex gap-5 items-center lg:absolute lg:top-80">
                             <ButtonCircle 
                                 className={`${commander ? 'bg-white' : 'bg-gray-700'}`}  
                                 onClick={handlerSectionCommander}

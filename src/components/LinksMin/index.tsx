@@ -8,6 +8,6 @@ type Props = {
 
 export default function LinksMin({name,className,href} : Props) {
     return (
-        <Link to={href} className={`${className} pb-2 text-lg text-white font-extralight uppercase`}>{name}</Link>
+        <Link to={href} className={`${className} pb-2 text-lg text-white font-extralight uppercase transition-all`}>{name}</Link>
     )
 }

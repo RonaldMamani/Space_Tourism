@@ -11,7 +11,7 @@ export const Links = ({number,content,href,className} : Props) => {
 
     return (
         <Link to={`/${href}`} className={`${className} 
-            flex gap-3 text-xl py-5 transition-colors hover:text-white
+            flex gap-3 text-xl py-5 transition-all hover:text-white
             lg:py-10
             `}>
             <span className="font-extrabold">0{number}</span>
