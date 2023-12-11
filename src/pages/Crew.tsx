@@ -40,8 +40,8 @@ export default function Crew() {
     const handlerSectionEngineer = () => {
         setCommander(false)
         setSpecialist(false)
-        setPilot(true)
-        setEngineer(false)
+        setPilot(false)
+        setEngineer(true)
     }
 
     return (
@@ -49,11 +49,13 @@ export default function Crew() {
             <Header />
             <div className="
                 text-white
-                lg:px-40 lg:pt-24
+                lg:px-40 lg:pt-24 lg:items-center lg:relative
                 ">
                 <TitlePage number={2} title="Meet Your Crew" />
-                <div className="">
-                    <div className="">
+                <div className="
+                    lg:grid lg:grid-cols-2 lg:items-center lg:pt-20
+                    ">
+                    <div className="flex flex-col gap-12">
                         {commander &&
                             <PersonDescrition 
                                 carrer="Commander "  
@@ -89,41 +91,47 @@ export default function Crew() {
                                 Iranian in space. "
                             />
                         }
-                        <div className="flex gap-4 items-center">
+                        <div className="flex gap-5 items-center">
                             <ButtonCircle 
-                                className={`${commander ? 'bg-white' : 'bg-gray-600'}`}  
+                                className={`${commander ? 'bg-white' : 'bg-gray-700'}`}  
                                 onClick={handlerSectionCommander}
                             />
                             <ButtonCircle 
-                                className={`${specialist ? 'bg-white' : 'bg-gray-600'}`}  
+                                className={`${specialist ? 'bg-white' : 'bg-gray-700'}`}  
                                 onClick={handlerSectionSpecialist}
                             />
                             <ButtonCircle 
-                                className={`${pilot ? 'bg-white' : 'bg-gray-600'}`}  
+                                className={`${pilot ? 'bg-white' : 'bg-gray-700'}`}  
                                 onClick={handlerSectionPilot}
                             />
                             <ButtonCircle 
-                                className={`${engineer ? 'bg-white' : 'bg-gray-600'}`}  
+                                className={`${engineer ? 'bg-white' : 'bg-gray-700'}`}  
                                 onClick={handlerSectionEngineer}
                             />
                         </div>
                     </div>
-                    <div className="">
-                        {commander &&
-                            <img src={Commander} alt="" />
-                        }
-                        {specialist &&
-                            <img src={Specialist} alt="" />
-                        }
-                        {pilot &&
-                            <img src={Pilot} alt="" />
-                        }
-                        {engineer &&
-                            <img src={Engineer} alt="" />
-                        }
+                    {commander &&
+                        <img 
+                            className="flex justify-end absolute right-40 top-12" 
+                            src={Commander} alt="" />
+                    }
+                    {specialist &&
+                        <img 
+                            className="flex justify-end absolute right-40 top-28" 
+                            src={Specialist} alt="" />
+                    }
+                    {pilot &&
+                        <img 
+                            className="flex justify-end absolute right-40 top-24" 
+                            src={Pilot} alt="" />
+                    }
+                    {engineer &&
+                        <img 
+                            className="flex justify-end absolute right-40 top-38"  
+                            src={Engineer} alt="" />
+                    }
                     </div>
                 </div>
-            </div>
         </section>
     )
 }
